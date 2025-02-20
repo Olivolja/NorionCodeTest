@@ -10,6 +10,7 @@ namespace TollFeeCalculator
     {
         public String GetVehicleType()
         {
+            //TODO return enum VehicleType
             return "Car";
         }
     }
