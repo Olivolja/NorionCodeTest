@@ -18,7 +18,7 @@ public class TollCalculator
      * @return - the total toll fee for that day
      */
     
-    public int GetTollFee(Vehicle vehicle, DateTime[] dates) 
+    public int GetTollFee(IVehicle vehicle, DateTime[] dates) 
     {
         if (vehicle is null // Added nullchecks for public method
             || dates is null
@@ -60,7 +60,7 @@ public class TollCalculator
 
     }
 
-    private int GetTollFee(Vehicle vehicle, DateTime date) // swaped parameter order inorder to be consistent with similar method for multiple dates, also made method private
+    private int GetTollFee(IVehicle vehicle, DateTime date) // swaped parameter order inorder to be consistent with similar method for multiple dates, also made method private
     {
         if (IsTollFreeDate(date) || IsTollFreeVehicle(vehicle)) return 0;
 
@@ -75,7 +75,7 @@ public class TollCalculator
         return 0;
     }
 
-    private bool IsTollFreeVehicle(Vehicle vehicle)
+    private bool IsTollFreeVehicle(IVehicle vehicle)
     {
         if (vehicle == null) return false;
         VehicleType vehicleType = vehicle.GetVehicleType();

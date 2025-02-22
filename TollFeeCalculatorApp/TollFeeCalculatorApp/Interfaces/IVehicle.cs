@@ -2,7 +2,7 @@
 
 namespace TollFeeCalculatorApp.Interfaces
 {
-    public interface Vehicle
+    public interface IVehicle
     {
         VehicleType GetVehicleType();
     }

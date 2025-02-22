@@ -6,7 +6,7 @@ using TollFeeCalculator.Enums;
 
 namespace TollFeeCalculator.Models
 {
-    public class Motorbike : Vehicle
+    public class Motorbike : IVehicle
     {
         public VehicleType GetVehicleType()
         {
