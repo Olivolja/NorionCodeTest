@@ -89,7 +89,7 @@ public class TollCalculator
             || date.DayOfWeek == DayOfWeek.Sunday 
             || date.Month == 7) return true; // added juli as a free moth with Month == 7
 
-        return holidays.Contains(date); // checks the static readonly hashset if the Date is a Holiday
+        return holidays.Contains(date.Date); // checks the static readonly hashset if the Date is a Holiday
     }
 
     private static readonly HashSet<VehicleType> tollFreeVehicles = new HashSet<VehicleType> // created a HashSet for performance lookup and maintainability
@@ -104,23 +104,23 @@ public class TollCalculator
 
     private static readonly HashSet<DateTime> holidays = new HashSet<DateTime> // created a HashSet for performance lookup and maintainability
     {
-        new DateTime(2013, 1, 1),
-        new DateTime(2013, 3, 28),
-        new DateTime(2013, 3, 29),
-        new DateTime(2013, 4, 1),
-        new DateTime(2013, 4, 30),
-        new DateTime(2013, 5, 1),
-        new DateTime(2013, 5, 8),
-        new DateTime(2013, 5, 9),
-        new DateTime(2013, 6, 5),
-        new DateTime(2013, 6, 6),
-        new DateTime(2013, 6, 21),
-        new DateTime(2013, 7, 1),
-        new DateTime(2013, 11, 1),
-        new DateTime(2013, 12, 24),
-        new DateTime(2013, 12, 25),
-        new DateTime(2013, 12, 26),
-        new DateTime(2013, 12, 31)
+        new DateTime(2013, 1, 1).Date,
+        new DateTime(2013, 3, 28).Date,
+        new DateTime(2013, 3, 29).Date,
+        new DateTime(2013, 4, 1).Date,
+        new DateTime(2013, 4, 30).Date,
+        new DateTime(2013, 5, 1).Date,
+        new DateTime(2013, 5, 8).Date,
+        new DateTime(2013, 5, 9).Date,
+        new DateTime(2013, 6, 5).Date,
+        new DateTime(2013, 6, 6).Date,
+        new DateTime(2013, 6, 21).Date,
+        new DateTime(2013, 7, 1).Date,
+        new DateTime(2013, 11, 1).Date,
+        new DateTime(2013, 12, 24).Date,
+        new DateTime(2013, 12, 25).Date,
+        new DateTime(2013, 12, 26).Date,
+        new DateTime(2013, 12, 31).Date
     };
 
     private static readonly List<TimeSpanFee> timeSpanFees = new List<TimeSpanFee> // added a List inorder to keep timespan intervals and fees sorted to avoid multiple if statements for maintanability
