@@ -8,6 +8,8 @@ using TollFeeCalculatorApp.Models;
 
 public class TollCalculator
 {
+    public const int MaxDailyTollFee = 60; // Added as const for class uniformity and extendability
+
     // Grouped public methods above private methods, and paired with names
 
     /**
@@ -56,7 +58,7 @@ public class TollCalculator
         }
 
         
-        return Math.Min(totalFee, 60); // Returns the minimum value of the total and 60 since 60 is the max price for a day
+        return Math.Min(totalFee, MaxDailyTollFee); // Returns the minimum value of the total and 60 since 60 is the max price for a day
 
     }
 
